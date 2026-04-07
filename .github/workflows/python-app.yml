@@ -1,12 +1,14 @@
-name: Build APK
+name: Build Abdullah Mapper
 on: [push, pull_request]
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
       - name: Build with Buildozer
-        uses: ArtemSerebriennikov/buildozer-action@v1
+        uses: Enteee/buildozer-action@v1.2.2
         with:
+          buildozer_version: stable
           workdir: .
-          buildozer_version: master
