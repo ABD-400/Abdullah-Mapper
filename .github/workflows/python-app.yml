@@ -3,7 +3,8 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # استخدام نسخة 22.04 لحل مشكلة الحزم المفقودة
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
@@ -16,6 +17,7 @@ jobs:
 
       - name: Build APK
         run: |
+          # الموافقة التلقائية على تراخيص الـ SDK
           yes | buildozer -v android debug
         continue-on-error: false
 
