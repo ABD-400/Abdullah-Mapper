@@ -8,9 +8,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: ArtemSerebrennkov/buildozer-action@v1
+        uses: ArtemSerebrennkov/buildozer-action@v1.6.1
         with:
-          buildozer_version: stable
           workdir: .
 
       - name: Upload APK
